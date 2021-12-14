@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    private Rigidbody playerRigidbody;
+    private AudioSource playerAudioSource;
+    private AudioSource cameraAudioSource;
     private Vector3 initialPos = new Vector3(0, 100, 0);
     public float speed = 10.0f;
     private float verticalInput;
@@ -12,12 +14,19 @@ public class PlayerController : MonoBehaviour
     private float turnSpeed = 100.0f;
     private float xRange = 200f;
     private float ground = 0f;
+    public GameObject projectilePrefab;
+    public GameObject shooterObject;
+    public AudioClip shotClip;
+    public ParticleSystem shotParticle;
 
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = initialPos;
+        playerAudioSource = GetComponent<AudioSource>();
+        playerRigidbody = GetComponent<Rigidbody>();
+        cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,6 +64,13 @@ public class PlayerController : MonoBehaviour
         if (transform.position.z < -xRange)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -xRange);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectilePrefab, shooterObject.transform.position, transform.rotation);
+            playerAudioSource.PlayOneShot(shotClip, 3f);
+            Instantiate(shotParticle, shooterObject.transform.position, shotParticle.transform.rotation);
         }
     }
 }
