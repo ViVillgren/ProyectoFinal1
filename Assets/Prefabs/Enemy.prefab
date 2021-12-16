@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 5270875129902522281}
   - component: {fileID: 5077788060726650380}
   - component: {fileID: 8772172070240089888}
-  - component: {fileID: 4162806138395813566}
   m_Layer: 0
   m_Name: moflete (1)
   m_TagString: Untagged
@@ -178,19 +177,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4162806138395813566
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628557166502788461}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1264168477545391298
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +188,6 @@ GameObject:
   - component: {fileID: 6373445359853668931}
   - component: {fileID: 4469220634009079462}
   - component: {fileID: 257374078766059987}
-  - component: {fileID: 6965441995162377014}
   m_Layer: 0
   m_Name: mano2 (1)
   m_TagString: Untagged
@@ -273,19 +258,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6965441995162377014
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264168477545391298}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1281269587463465203
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +272,6 @@ GameObject:
   - component: {fileID: 1158137309884969728}
   - component: {fileID: 683529507}
   - component: {fileID: 3449445918976922374}
-  - component: {fileID: 7619917211986442884}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Bad
@@ -346,7 +317,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!65 &3124583002629201847
 BoxCollider:
@@ -359,8 +330,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.4171333, y: 2.3678408, z: 2.4417782}
+  m_Center: {x: -0.27726555, y: -0.6839204, z: -0.12938976}
 --- !u!114 &1158137309884969728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,20 +455,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7619917211986442884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281269587463465203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b31e0116105cd449e7a7e54fbf3bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stars: 0
-  rewardParticle: {fileID: 0}
 --- !u!1 &1627597353472130851
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +466,6 @@ GameObject:
   - component: {fileID: 4391336953666065083}
   - component: {fileID: 5946745204767965817}
   - component: {fileID: 367241782468486474}
-  - component: {fileID: 7463161277035109902}
   m_Layer: 0
   m_Name: moflete2 (1)
   m_TagString: Untagged
@@ -580,19 +536,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7463161277035109902
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627597353472130851}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1936468324969307139
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +547,6 @@ GameObject:
   - component: {fileID: 3362742949247326017}
   - component: {fileID: 3184544465190629820}
   - component: {fileID: 8126856224217188550}
-  - component: {fileID: 2909441489962266195}
   m_Layer: 0
   m_Name: mano1 (1)
   m_TagString: Untagged
@@ -675,19 +617,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2909441489962266195
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936468324969307139}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2228353501486646086
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +628,6 @@ GameObject:
   - component: {fileID: 8888050338191403800}
   - component: {fileID: 8167407572569231256}
   - component: {fileID: 4594380986059292749}
-  - component: {fileID: 394110573609097390}
   m_Layer: 0
   m_Name: Cuerpo (1)
   m_TagString: Untagged
@@ -770,19 +698,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &394110573609097390
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2228353501486646086}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2245369513959266004
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +804,6 @@ GameObject:
   - component: {fileID: 4102641478779095879}
   - component: {fileID: 65460342667752329}
   - component: {fileID: 7514998881117777851}
-  - component: {fileID: 6002015883296267026}
   m_Layer: 0
   m_Name: ojo2 (1)
   m_TagString: Untagged
@@ -960,19 +874,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6002015883296267026
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3895693894368242367}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4402643120443100597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +980,6 @@ GameObject:
   - component: {fileID: 6676905464600958810}
   - component: {fileID: 3932381983944198617}
   - component: {fileID: 7272188428854937460}
-  - component: {fileID: 1282745998148568445}
   m_Layer: 0
   m_Name: pierna1 (1)
   m_TagString: Untagged
@@ -1150,19 +1050,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1282745998148568445
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7108929521824531718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8018493584431790100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1061,6 @@ GameObject:
   - component: {fileID: 6137280159412996965}
   - component: {fileID: 245228382270979622}
   - component: {fileID: 515628040812774454}
-  - component: {fileID: 76824845624380204}
   m_Layer: 0
   m_Name: pierna2 (1)
   m_TagString: Untagged
@@ -1245,19 +1131,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &76824845624380204
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8018493584431790100}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8262007089989727513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1142,6 @@ GameObject:
   - component: {fileID: 3545530094094988294}
   - component: {fileID: 5466324299955330510}
   - component: {fileID: 2715666371263000758}
-  - component: {fileID: 1858492391948868877}
   m_Layer: 0
   m_Name: ojo1 (1)
   m_TagString: Untagged
@@ -1340,19 +1212,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1858492391948868877
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8262007089989727513}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8880919863347299784
 GameObject:
   m_ObjectHideFlags: 0

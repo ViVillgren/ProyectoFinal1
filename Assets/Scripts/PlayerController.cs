@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject shooterObject;
     public AudioClip shotClip;
     public ParticleSystem shotParticle;
+    public Targets targetsScript;
 
 
     // Start is called before the first frame update
@@ -27,12 +28,16 @@ public class PlayerController : MonoBehaviour
         playerAudioSource = GetComponent<AudioSource>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        targetsScript = FindObjectOfType<Targets>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        if (!targetsScript.gameOver)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
 
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
@@ -66,7 +71,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, -xRange);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectilePrefab, shooterObject.transform.position, transform.rotation);
             playerAudioSource.PlayOneShot(shotClip, 3f);

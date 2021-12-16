@@ -7,18 +7,13 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     private PlayerController playerControllerScript;
-    public bool gameOver;
     public GameObject[] targetPrefabs;
     public Vector3 randomSpawnPos;
     public List<Vector3> targetPositions;
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
-
     private float spawnRate = 5f;
     private float startDelay = 1f;
-    private int star = 0;
     private float ground = 0;
-    private float spawnLim = 200;
+    private float spawnLim = 190;
     public int missCounter;
     private float spawnPos;
     public int totalMisses = 1;
@@ -27,10 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        star = 0;
-        UpdateScore(pointsToAdd: 0);
         missCounter = 0;
-        gameOverText.gameObject.SetActive(false);
 
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         InvokeRepeating("SpawnObject", startDelay, spawnRate);
@@ -57,18 +49,5 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(targetPrefabs[1], SpawnRandomPos(), targetPrefabs[1].transform.rotation);
         }
-    }
-
-    public void UpdateScore(int pointsToAdd)
-    {
-        star += pointsToAdd;
-        scoreText.text = $"Stars: {star}/10";
-
-    }
-
-    public void GameOver()
-    {
-        gameOver = true;
-        gameOverText.gameObject.SetActive(true);
     }
 }
