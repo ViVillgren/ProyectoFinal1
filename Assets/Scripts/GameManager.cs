@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private float spawnRate = 5f;
     private float startDelay = 1f;
     private float ground = 0;
-    private float spawnLim = 120;
+    private float spawnLim = 200;
 
     public int missCounter;
     private float spawnPos;

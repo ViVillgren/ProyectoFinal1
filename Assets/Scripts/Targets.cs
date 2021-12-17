@@ -54,6 +54,7 @@ public class Targets : MonoBehaviour
                     win = true;
                     winText.gameObject.SetActive(true);
                     playerControllerScript.winAudioSource.PlayOneShot(playerControllerScript.winClip, 1f);
+                    cameraAudioSource.Stop();
 
                 }
             }
