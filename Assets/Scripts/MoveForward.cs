@@ -8,15 +8,15 @@ public class MoveForward : MonoBehaviour
     private float xRange = 200f;
     private float ground = 0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+
+        //Los proyectiles se destruyen al llegar al limite
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         if (transform.position.x > xRange)

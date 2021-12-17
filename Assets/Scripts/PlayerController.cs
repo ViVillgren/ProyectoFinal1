@@ -5,45 +5,58 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
-    private AudioSource playerAudioSource;
-    private AudioSource cameraAudioSource;
+    public AudioSource playerAudioSource;
+    public AudioSource winAudioSource;
+    public AudioSource cameraAudioSource;
+
+    public AudioClip boomClip;
+    public AudioClip coinClip;
+    public AudioClip deathClip;
+    public AudioClip winClip;
+    public AudioClip shotClip;
+
+    public GameObject projectilePrefab;
+    public GameObject shooterObject;
+    public ParticleSystem shotParticle;
+    public ParticleSystem explosionParticle;
+    public Targets targetsScript;
+
     private Vector3 initialPos = new Vector3(0, 100, 0);
-    public float speed = 10.0f;
+    public float speed = 20.0f;
     private float verticalInput;
     private float horizontalInput;
     private float turnSpeed = 100.0f;
     private float xRange = 200f;
     private float ground = 0f;
-    public GameObject projectilePrefab;
-    public GameObject shooterObject;
-    public AudioClip shotClip;
-    public ParticleSystem shotParticle;
-    public Targets targetsScript;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         transform.position = initialPos;
         playerAudioSource = GetComponent<AudioSource>();
-        playerRigidbody = GetComponent<Rigidbody>();
+        winAudioSource = GetComponent<AudioSource>(); 
         cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        playerRigidbody = GetComponent<Rigidbody>();
         targetsScript = FindObjectOfType<Targets>();
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!targetsScript.gameOver)
+        // Aqui hace que cuando gane o pierda el movimiento del player pare
+        if (!targetsScript.gameOver && !targetsScript.win)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
 
+
+        //Controlador del player
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up * Time.deltaTime * horizontalInput * turnSpeed);
         transform.Rotate(Vector3.right * Time.deltaTime * -verticalInput * turnSpeed);
 
+        //limite del player
         if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
@@ -71,6 +84,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, -xRange);
         }
 
+        //Tecla para disparar
         if (Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectilePrefab, shooterObject.transform.position, transform.rotation);

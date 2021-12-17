@@ -5,36 +5,26 @@ using TMPro;
 
 public class DetectCollision : MonoBehaviour
 {
-    private AudioSource explosionAudioSource;
-    public ParticleSystem explosionParticle;
-    public AudioClip boomClip;
    
+    private PlayerController playerControllerScript;
 
 
     void Start()
     {
-        explosionAudioSource = GetComponent<AudioSource>();
+
+        playerControllerScript = FindObjectOfType<PlayerController>();
 
     }
 
     private void OnTriggerEnter(Collider otherTrigger)
     {
-        /*
-        if (otherTrigger.gameObject.CompareTag("Bad"))
+        
+        if (otherTrigger.gameObject.CompareTag("Bad")) //con el tag evitamos que tambien destruyan los recolectables con los proyectiles
         {
-            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-            explosionAudioSource.PlayOneShot(boomClip, 4f);
             Destroy(otherTrigger.gameObject); //Gameobject enemy
             Destroy(gameObject); //Gameobject del proyectil
-            
+            playerControllerScript.playerAudioSource.PlayOneShot(playerControllerScript.boomClip, 1f);
+            Instantiate(playerControllerScript.explosionParticle, transform.position, playerControllerScript.explosionParticle.transform.rotation);
         }
-         */
-
-
-        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-        explosionAudioSource.PlayOneShot(boomClip, 4f);
-        Destroy(otherTrigger.gameObject); //Gameobject enemy
-        Destroy(gameObject); //Gameobject del proyectil
-
     }
 }
